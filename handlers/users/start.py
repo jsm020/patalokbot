@@ -19,18 +19,12 @@ async def send_photos_range(message: types.Message, start_index: int, end_index:
         await message.answer_photo(photo=photo_url)
     await message.answer(f"Keyingisi uchun /{next_command}")
 
-<<<<<<< HEAD
 async def send_last_photos_range(message: types.Message, start_index: int, end_index: int):
     for nomer in range(list[start_index], list[end_index]):
-=======
-@dp.message_handler(text="Абстракция и 3d")
-async def bot_send_picture(message:types.Message):
-    for nomer in range(2,84):
->>>>>>> a0ff6db3b28ee5eda705784b37002b55ef03e2f8
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="Вода", state="*")
+@dp.message_handler(text="Абстракция и 3d", state="*")
 async def bot_send_picture(message: types.Message):
     await send_photos_range(message, 0, 1, "next_page_2_voda")
 
