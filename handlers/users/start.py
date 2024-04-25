@@ -50,13 +50,13 @@ async def bot_send_picture(message:types.Message):
 
 @dp.message_handler(text="Фрукты и Кофе")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(660,659):
+    for nomer in range(660,784):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
 @dp.message_handler(text="Птицы")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(592,659):
+    for nomer in range(761,792):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
