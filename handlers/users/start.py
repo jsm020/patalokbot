@@ -11,3 +11,9 @@ async def bot_start(message: types.Message):
 
 
 
+@dp.message_handler(text="Вода")
+async def bot_send_picture(message:types.Message):
+    for nomer in range(2,84):
+        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+        await message.answer_photo(photo=photo_url)
+
