@@ -127,13 +127,13 @@ async def bot_send_picture_3(message: types.Message):
 
 list_dst = [309,329,349,369,389,409,429,443]
 async def send_photos_range_dst(message: types.Message, start_index: int, end_index: int, next_command: str):
-    for nomer in range(list_abs[start_index], list_abs[end_index]):
+    for nomer in range(list_dst[start_index], list_dst[end_index]):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
     await message.answer(f"Keyingisi uchun /{next_command}")
 
 async def send_last_photos_range_dst(message: types.Message, start_index: int, end_index: int):
-    for nomer in range(list_abs[start_index], list_abs[end_index]):
+    for nomer in range(list_dst[start_index], list_dst[end_index]):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
