@@ -17,3 +17,20 @@ async def bot_send_picture(message:types.Message):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
+@dp.message_handler(text="Водопад")
+async def bot_send_picture(message:types.Message):
+    for nomer in range(85,108):
+        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+        await message.answer_photo(photo=photo_url)
+
+@dp.message_handler(text="Город")
+async def bot_send_picture(message:types.Message):
+    for nomer in range(109,307):
+        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+        await message.answer_photo(photo=photo_url)
+
+@dp.message_handler(text="Детское")
+async def bot_send_picture(message:types.Message):
+    for nomer in range(309,442):
+        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+        await message.answer_photo(photo=photo_url)
