@@ -24,7 +24,7 @@ async def send_last_photos_range(message: types.Message, start_index: int, end_i
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="Абстракция и 3d", state="*")
+@dp.message_handler(text="Абстракция & 3d", state="*")
 async def bot_send_picture(message: types.Message):
     await send_photos_range(message, 0, 1, "next_page_2_voda")
 
@@ -67,13 +67,13 @@ async def bot_send_picture(message:types.Message):
 
 @dp.message_handler(text="Детское", state="*")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(309,442):
+    for nomer in range(309,443):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
 @dp.message_handler(text="Космос & Луна")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(443,591):
+    for nomer in range(443,592):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
@@ -86,19 +86,19 @@ async def bot_send_picture(message:types.Message):
 
 @dp.message_handler(text="Фрукты и Кофе")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(660,748):
+    for nomer in range(660,760):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
 @dp.message_handler(text="Птицы")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(760,792):
+    for nomer in range(761,792):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
 @dp.message_handler(text="Природа")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(592,659):
+    for nomer in range(793,875):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
