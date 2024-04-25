@@ -90,13 +90,13 @@ async def bot_send_picture(message:types.Message):
 
 @dp.message_handler(text="Детское", state="*")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(309,442):
+    for nomer in range(309,443):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
 @dp.message_handler(text="Космос & Луна")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(443,591):
+    for nomer in range(443,592):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
@@ -121,7 +121,7 @@ async def bot_send_picture(message:types.Message):
 
 @dp.message_handler(text="Природа")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(592,659):
+    for nomer in range(793,875):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
