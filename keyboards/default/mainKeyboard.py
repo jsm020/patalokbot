@@ -5,7 +5,6 @@ menuPython = ReplyKeyboardMarkup(
         [
             KeyboardButton(text="Вода"),
             KeyboardButton(text="Водопад"),
-            KeyboardButton(text="Абстракция & 3d"),
         ],
         [
             KeyboardButton(text="Город"),
@@ -21,6 +20,7 @@ menuPython = ReplyKeyboardMarkup(
         ],
         [
             KeyboardButton(text="Природа"),
+            KeyboardButton(text="Абстракция & 3d"),
         ],
         [
             KeyboardButton(text="Исторически"),
