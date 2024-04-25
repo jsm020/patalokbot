@@ -11,13 +11,23 @@ menuPython = ReplyKeyboardMarkup(
             KeyboardButton(text="Детское"),
         ],
         [
-            KeyboardButton(text="Космос&Луна"),
+            KeyboardButton(text="Космос & Луна"),
             KeyboardButton(text="Небо"),
         ],
         [
-            KeyboardButton(text="Дельфин"),
-            KeyboardButton(text="Небо & Птицы"),
+            KeyboardButton(text="Фрукты + 3d"),
+            KeyboardButton(text="Птицы"),
+        ],
+        [
+            KeyboardButton(text="Луна & Небо"),
+            KeyboardButton(text="Природа"),
+        ],
+        [
+            KeyboardButton(text="Исторически"),
+            KeyboardButton(text="ультрафеле"),
         ],
     ],
     resize_keyboard=True
 )
+
+
