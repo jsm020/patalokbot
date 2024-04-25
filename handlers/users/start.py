@@ -139,17 +139,17 @@ async def send_last_photos_range_dst(message: types.Message, start_index: int, e
 
 @dp.message_handler(text="Детское", state="*")
 async def bot_send_picture(message: types.Message):
-    await send_last_photos_range_dst(message, 0, 1, "next_page_2_grd")
+    await send_photos_range_dst(message, 0, 1, "next_page_2_dst")
 
-@dp.message_handler(commands='next_page_2_grd')
+@dp.message_handler(commands='next_page_2_dst')
 async def bot_send_picture_2(message: types.Message):
-    await send_last_photos_range_dst(message, 1, 2, "next_page_3_grd")
+    await send_photos_range_dst(message, 1, 2, "next_page_3_dst")
 
-@dp.message_handler(commands='next_page_3_grd')
+@dp.message_handler(commands='next_page_3_dst')
 async def bot_send_picture_3(message: types.Message):
-    await send_last_photos_range_dst(message, 2, 3, 'next_page_4_grd')
+    await send_photos_range_dst(message, 2, 3, 'next_page_4_dst')
 
-@dp.message_handler(commands='next_page_4_grd')
+@dp.message_handler(commands='next_page_4_dst')
 async def bot_send_picture_3(message: types.Message):
     await send_last_photos_range_dst(message, 3, 4)
 
