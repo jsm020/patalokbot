@@ -18,6 +18,13 @@ menuPython = ReplyKeyboardMarkup(
             KeyboardButton(text="Дельфин"),
             KeyboardButton(text="Небо & Птицы"),
         ],
+                [
+            KeyboardButton(text="Дельфин"),
+            KeyboardButton(text="Небо & Птицы"),
+        ],        [
+            KeyboardButton(text="Дельфин"),
+            KeyboardButton(text="Небо & Птицы"),
+        ],
     ],
     resize_keyboard=True
 )
