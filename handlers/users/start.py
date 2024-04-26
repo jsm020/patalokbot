@@ -15,14 +15,7 @@ async def bot_start(message: types.Message):
 
 
 
-@dp.message_handler(text="Фрукты и Кофе")
-async def bot_send_picture(message:types.Message):
-    photos = db.select_photo(Photo_category="Фрукты и Кофе")
-    for item in photos:
-        await message.answer_photo(photo=item[1])
-    for nomer in range(660,760):
-        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
-        await message.answer_photo(photo=photo_url)
+
 
 @dp.message_handler(text="Птицы")
 async def bot_send_picture(message:types.Message):
@@ -33,14 +26,6 @@ async def bot_send_picture(message:types.Message):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="Природа")
-async def bot_send_picture(message:types.Message):
-    photos = db.select_photo(Photo_category="Природа")
-    for item in photos:
-        await message.answer_photo(photo=item[1])
-    for nomer in range(793,875):
-        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
-        await message.answer_photo(photo=photo_url)
 
 @dp.message_handler(text="Исторически")
 async def bot_send_picture(message:types.Message):
