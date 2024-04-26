@@ -2,7 +2,7 @@ from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
 from keyboards.default.mainKeyboard import menuPython
 
-from loader import dp
+from loader import dp,db
 
 
 
@@ -24,8 +24,11 @@ async def send_last_photos_range_abs(message: types.Message, start_index: int, e
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="Абстракция & 3d", state="*")
+@dp.message_handler(text="Абстракция & 3d")
 async def bot_send_picture(message: types.Message):
+    photos = db.select_photo(Photo_category="Абстракция & 3d")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
     await send_photos_range_abs(message, 0, 1, "next_page_2_abs")
 
 @dp.message_handler(commands='next_page_2_abs')
@@ -66,8 +69,12 @@ async def send_last_photos_range_vod(message: types.Message, start_index: int, e
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="Водопад", state="*")
+@dp.message_handler(text="Водопад")
 async def bot_send_picture(message: types.Message):
+    photos = db.select_photo(Photo_category="Водопад")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
+
     await send_photos_range_vod(message, 0, 1, "next_page_2_vod")
 
 @dp.message_handler(commands='next_page_2_vod')
@@ -93,8 +100,11 @@ async def send_last_photos_range_grd(message: types.Message, start_index: int, e
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="Город", state="*")
+@dp.message_handler(text="Город")
 async def bot_send_picture(message: types.Message):
+    photos = db.select_photo(Photo_category="Город")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
     await send_photos_range_grd(message, 0, 1, "next_page_2_grd")
 
 @dp.message_handler(commands='next_page_2_grd')
@@ -137,8 +147,11 @@ async def send_last_photos_range_dst(message: types.Message, start_index: int, e
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="Детское", state="*")
+@dp.message_handler(text="Детское")
 async def bot_send_picture(message: types.Message):
+    photos = db.select_photo(Photo_category="Детское")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
     await send_photos_range_dst(message, 0, 1, "next_page_2_dst")
 
 @dp.message_handler(commands='next_page_2_dst')
@@ -156,12 +169,18 @@ async def bot_send_picture_3(message: types.Message):
 
 @dp.message_handler(text="Космос & Луна")
 async def bot_send_picture(message:types.Message):
+    photos = db.select_photo(Photo_category="Космос & Луна")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
     for nomer in range(443,592):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
 @dp.message_handler(text="Небо")
 async def bot_send_picture(message:types.Message):
+    photos = db.select_photo(Photo_category="Небо")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
     for nomer in range(592,659):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
@@ -169,33 +188,52 @@ async def bot_send_picture(message:types.Message):
 
 @dp.message_handler(text="Фрукты и Кофе")
 async def bot_send_picture(message:types.Message):
+    photos = db.select_photo(Photo_category="Фрукты и Кофе")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
     for nomer in range(660,760):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
 @dp.message_handler(text="Птицы")
 async def bot_send_picture(message:types.Message):
+    photos = db.select_photo(Photo_category="Птицы")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
     for nomer in range(761,792):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
 @dp.message_handler(text="Природа")
 async def bot_send_picture(message:types.Message):
+    photos = db.select_photo(Photo_category="Природа")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
     for nomer in range(793,875):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
 @dp.message_handler(text="Исторически")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(592,659):
-        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
-        await message.answer_photo(photo=photo_url)
+    photos = db.select_photo(Photo_category="Исторически")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
+    # for nomer in range(592,659):
+    #     photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+    #     await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="ультрафеле")
+@dp.message_handler(text="Yльтрафеле")
 async def bot_send_picture(message:types.Message):
-    for nomer in range(592,659):
-        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
-        await message.answer_photo(photo=photo_url)
-
+    photos = db.select_photo(Photo_category="Yльтрафеле")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
+    # for nomer in range(592,659):
+    #     photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+    #     await message.answer_photo(photo=photo_url)
+@dp.message_handler(text="Вода")
+async def bot_send_picture(message:types.Message):
+    photos = db.select_photo(Photo_category="Вода")
+    for item in photos:
+        await message.answer_photo(photo=item[1])
 
 # mcjsdnzkncjsd

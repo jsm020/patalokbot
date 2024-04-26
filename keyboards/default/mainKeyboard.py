@@ -24,7 +24,7 @@ menuPython = ReplyKeyboardMarkup(
         ],
         [
             KeyboardButton(text="Фрукты и Кофе"),
-            KeyboardButton(text="ультрафеле"),
+            KeyboardButton(text="Yльтрафеле"),
         ],
     ],
     resize_keyboard=True
