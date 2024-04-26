@@ -6,4 +6,6 @@ from . import detski
 from . import gorod
 from . import nebo
 from . import vodopad
+from . import mevakofe
+from . import priroda
 from . import echo
