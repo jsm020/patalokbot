@@ -52,7 +52,7 @@ async def bot_send_picture_6(message: types.Message):
 async def bot_send_picture_7(message: types.Message):
     await send_last_photos_range_abs(message, 6, 7)
 
-
+# ____________________________________________________________
 
 list_vod = [84,90,100,108]
 async def send_photos_range_vod(message: types.Message, start_index: int, end_index: int, next_command: str):
@@ -79,7 +79,7 @@ async def bot_send_picture_3(message: types.Message):
     await send_last_photos_range_vod(message, 2, 3)
 
 
-
+# ____________________________________________________________
 
 list_gorod = [109,129,149,169,189,209,229,249,269,289,307]
 async def send_photos_range_grd(message: types.Message, start_index: int, end_index: int, next_command: str):
@@ -121,7 +121,7 @@ async def bot_send_picture_3(message: types.Message):
 async def bot_send_picture_3(message: types.Message):
     await send_last_photos_range_grd(message, 6, 7)
 
-
+# _____________________________________________________
 
 
 
@@ -152,45 +152,147 @@ async def bot_send_picture_3(message: types.Message):
 @dp.message_handler(commands='next_page_4_dst')
 async def bot_send_picture_3(message: types.Message):
     await send_last_photos_range_dst(message, 3, 4)
+# _______________________________________________________
 
 
-@dp.message_handler(text="Космос & Луна")
-async def bot_send_picture(message:types.Message):
-    for nomer in range(443,592):
+list_ln = [443,463,483,503,523,543,563,592]
+async def send_photos_range_ln(message: types.Message, start_index: int, end_index: int, next_command: str):
+    for nomer in range(list_ln[start_index], list_ln[end_index]):
+        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+        await message.answer_photo(photo=photo_url)
+    await message.answer(f"Keyingisi uchun /{next_command}")
+
+async def send_last_photos_range_ln(message: types.Message, start_index: int, end_index: int):
+    for nomer in range(list_ln[start_index], list_ln[end_index]):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="Небо")
-async def bot_send_picture(message:types.Message):
-    for nomer in range(592,659):
+@dp.message_handler(text="Космос & Луна", state="*")
+async def bot_send_picture(message: types.Message):
+    await send_photos_range_ln(message, 0, 1, "next_page_2_ln")
+
+@dp.message_handler(commands='next_page_2_ln')
+async def bot_send_picture_2(message: types.Message):
+    await send_photos_range_ln(message, 1, 2, "next_page_3_ln")
+
+@dp.message_handler(commands='next_page_3_ln')
+async def bot_send_picture_3(message: types.Message):
+    await send_photos_range_ln(message, 2, 3, 'next_page_4_ln')
+
+@dp.message_handler(commands='next_page_4_ln')
+async def bot_send_picture_3(message: types.Message):
+    await send_last_photos_range_ln(message, 3, 4)
+# ________________________________________________________
+
+list_nb = [592,612,622,659]
+async def send_photos_range_nb(message: types.Message, start_index: int, end_index: int, next_command: str):
+    for nomer in range(list_nb[start_index], list_nb[end_index]):
+        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+        await message.answer_photo(photo=photo_url)
+    await message.answer(f"Keyingisi uchun /{next_command}")
+
+async def send_last_photos_range_nb(message: types.Message, start_index: int, end_index: int):
+    for nomer in range(list_nb[start_index], list_nb[end_index]):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
+@dp.message_handler(commands='next_page_2_ln')
+async def bot_send_picture_2(message: types.Message):
+    await send_photos_range_nb(message, 0, 1, "next_page_2_nb")
 
-@dp.message_handler(text="Фрукты и Кофе")
-async def bot_send_picture(message:types.Message):
-    for nomer in range(660,760):
+@dp.message_handler(commands='next_page_2_ln')
+async def bot_send_picture_2(message: types.Message):
+    await send_photos_range_nb(message, 1, 2, "next_page_3_nb")
+
+
+
+@dp.message_handler(commands='next_page_3_nb')
+async def bot_send_picture_3(message: types.Message):
+    await send_photos_range_nb(message, 2, 3, 'next_page_4_nb')
+
+@dp.message_handler(commands='next_page_3_nb')
+async def bot_send_picture_3(message: types.Message):
+    await send_last_photos_range_nb(message, 3, 4)
+# ___________________________________________________________
+
+list_ft = [659,679,699,719,739,760]
+async def send_photos_range_ft(message: types.Message, start_index: int, end_index: int, next_command: str):
+    for nomer in range(list_ft[start_index], list_ft[end_index]):
+        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+        await message.answer_photo(photo=photo_url)
+    await message.answer(f"Keyingisi uchun /{next_command}")
+
+async def send_last_photos_range_ft(message: types.Message, start_index: int, end_index: int):
+    for nomer in range(list_ft[start_index], list_ft[end_index]):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="Птицы")
-async def bot_send_picture(message:types.Message):
-    for nomer in range(761,792):
+@dp.message_handler(text="Фрукты и Кофе", state="*")
+async def bot_send_picture(message: types.Message):
+    await send_photos_range_ft(message, 0, 1, "next_page_2_ft")
+    
+@dp.message_handler(commands='next_page_2_nb')
+async def bot_send_picture_3(message: types.Message):
+    await send_photos_range_ft(message, 1, 2, 'next_page_3_nb')
+
+@dp.message_handler(commands='next_page_3_nb')
+async def bot_send_picture_3(message: types.Message):
+    await send_last_photos_range_ft(message, 3, 4)
+# _________________________________________________
+
+list_pt = [761,781,792]
+async def send_photos_range_pt(message: types.Message, start_index: int, end_index: int, next_command: str):
+    for nomer in range(list_pt[start_index], list_pt[end_index]):
+        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+        await message.answer_photo(photo=photo_url)
+    await message.answer(f"Keyingisi uchun /{next_command}")
+
+async def send_last_photos_range_pt(message: types.Message, start_index: int, end_index: int):
+    for nomer in range(list_pt[start_index], list_pt[end_index]):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
 
-@dp.message_handler(text="Природа")
-async def bot_send_picture(message:types.Message):
-    for nomer in range(793,875):
+@dp.message_handler(text="Птицы", state="*")
+async def bot_send_picture(message: types.Message):
+    await send_last_photos_range_pt(message, 0, 1, "next_page_2_pt")
+    
+@dp.message_handler(commands='next_page_2_nb')
+async def bot_send_picture_3(message: types.Message):
+    await send_last_photos_range_ft(message, 1,2)
+# ________________________________________________________________________________
+
+list_pr = [792,812,822,842,862,875]
+async def send_photos_range_pr(message: types.Message, start_index: int, end_index: int, next_command: str):
+    for nomer in range(list_pr[start_index], list_pr[end_index]):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
+    await message.answer(f"Keyingisi uchun /{next_command}")
+
+async def send_last_photos_range_pr(message: types.Message, start_index: int, end_index: int):
+    for nomer in range(list_pr[start_index], list_pr[end_index]):
+        photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
+        await message.answer_photo(photo=photo_url)
+
+@dp.message_handler(text="Природа", state="*")
+async def bot_send_picture(message: types.Message):
+    await send_photos_range_pr(message, 0, 1, "next_page_2_pr")
+    
+@dp.message_handler(commands='next_page_2_pr')
+async def bot_send_picture_3(message: types.Message):
+    await send_photos_range_pr(message, 1, 2, 'next_page_3_pr')
+
+@dp.message_handler(commands='next_page_3_pr')
+async def bot_send_picture_3(message: types.Message):
+    await send_last_photos_range_pr(message, 3, 4)
+# _________________________________________________
+
 
 @dp.message_handler(text="Исторически")
 async def bot_send_picture(message:types.Message):
     for nomer in range(592,659):
         photo_url = f"https://t.me/asafsfbdbfksdbgosgsbgeiw/{nomer}"
         await message.answer_photo(photo=photo_url)
-
+# _______________________________________________________
 @dp.message_handler(text="ультрафеле")
 async def bot_send_picture(message:types.Message):
     for nomer in range(592,659):
