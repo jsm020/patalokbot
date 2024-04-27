@@ -1,12 +1,13 @@
 from aiogram import types
 from states.photoState import PhotoData
 from loader import dp,bot,db
+from filters import IsPrivate
 from aiogram.dispatcher import FSMContext
 from keyboards.default.mainKeyboard import menuPython
 
 
 
-@dp.message_handler(commands='addphoto',state="*")
+@dp.message_handler(IsPrivate(),commands='addphoto',state="*")
 async def material_def(message: types.Message):
     people = message.chat.id
     if people ==912725354:
