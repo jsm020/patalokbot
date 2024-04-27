@@ -8,9 +8,12 @@ from keyboards.default.mainKeyboard import menuPython
 
 @dp.message_handler(commands='addphoto',state="*")
 async def material_def(message: types.Message):
-    # print(1)
-    await message.answer("Rasm junating!")
-    await PhotoData.photo_link.set()
+    people = message.chat.id
+    if people ==912725354:
+        await message.answer("Rasm junating!")
+        await PhotoData.photo_link.set()
+    else:
+        await message.answer('sizga bunga ruxsat yuq')
 
 
 @dp.message_handler(content_types=types.ContentType.PHOTO, state=PhotoData.photo_link)
