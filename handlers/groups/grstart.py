@@ -7,7 +7,7 @@ from loader import dp,db
 
 
 
-@dp.message_handler(IsGroup())
-async def bot_start(message: types.Message):
-    print(message)
+# @dp.message_handler(IsGroup())
+# async def bot_start(message: types.Message):
+#     print(message)
 
